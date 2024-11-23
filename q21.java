@@ -1,23 +1,28 @@
+import java.util.Arrays;
 import java.util.Scanner;
-public class q21 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter 1 for Binary to Decimal or 2 for Decimal to Binary:");
-        int choice = sc.nextInt();
 
-        if (choice == 1) {
-            System.out.println("Enter a binary number:");
-            String binary = sc.next();
-            int decimal = Integer.parseInt(binary, 2);
-            System.out.println("Decimal equivalent: " + decimal);
-        } else if (choice == 2) {
-            System.out.println("Enter a decimal number:");
-            int decimal = sc.nextInt();
-            String binary = Integer.toBinaryString(decimal);
-            System.out.println("Binary equivalent: " + binary);
-        } else {
-            System.out.println("Invalid choice.");
-        }
-    }
+public class MedianOfNumbers {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the number of elements:");
+int n = sc.nextInt();
+int[] arr = new int[n];
+
+System.out.println("Enter the numbers:");
+for (int i = 0; i < n; i++) {
+arr[i] = sc.nextInt();
+}
+
+Arrays.sort(arr);
+
+double median;
+if (n % 2 == 0) {
+median = (arr[n/2 - 1] + arr[n/2]) / 2.0;
+} else {
+median = arr[n/2];
+}
+
+System.out.println("Median: " + median);
+}
 }
 
